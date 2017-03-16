@@ -1,0 +1,7 @@
+node_modules/
+typings/
+app/app.component.js
+app/app.component.js.map
+app/main.js
+app/main.js.map
+npm-debug.*
