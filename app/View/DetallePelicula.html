@@ -1,0 +1,40 @@
+<h1>{{ titulo }}</h1>
+
+<p>Pelicula favorita</p>
+
+<button (click)="ShowHide(true)" [class.showHide]="mostrarPelicula === true">Mostrar</button>
+<button (click)="ShowHide(false)" [class.showHide]="mostrarPelicula === false">Ocultar</button>
+
+<ul *ngIf="mostrarPelicula === true">
+    <li>Titulo: {{ pelicula.titulo }}</li>
+    <li>Director: {{ pelicula.director }} </li>
+    <li>Año: {{ pelicula.anio }}</li>
+</ul>
+
+<p>
+	<input type="text" [(ngModel)] = "pelicula.titulo" />
+</p>
+
+<hr>
+
+<p>Listado de peliculas</p>
+
+<table id="misPeliculas">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Titulo</th>
+			<th>Director</th>
+			<th>Año</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<tr *ngFor="#pelicula of peliculas">
+			<th>{{ pelicula.id }}</th>
+			<th>{{ pelicula.titulo }}</th>
+			<th>{{ pelicula.director }}</th>
+			<th>{{ pelicula.anio }}</th>
+		</tr>
+	</tbody>
+</table>
